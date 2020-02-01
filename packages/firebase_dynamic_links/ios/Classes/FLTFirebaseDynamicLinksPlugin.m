@@ -116,7 +116,9 @@ static NSMutableDictionary *getDictionaryFromFlutterError(FlutterError *error) {
 }
 
 - (NSMutableDictionary *)getInitialLink {
-  return getDictionaryFromDynamicLink(_initialLink);
+  NSMutableDictionary *result = getDictionaryFromDynamicLink(_initialLink)
+  _initialLink = nil;
+  return result;
 }
 
 - (BOOL)application:(UIApplication *)application
