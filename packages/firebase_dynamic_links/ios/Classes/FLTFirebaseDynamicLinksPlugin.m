@@ -97,7 +97,7 @@ static NSMutableDictionary *getDictionaryFromFlutterError(FlutterError *error) {
     if (dict == nil && self.flutterError) {
       result(self.flutterError);
     } else {
-      result(nil);
+      result(dict);
     }
   } else if ([@"FirebaseDynamicLinks#getDynamicLink" isEqualToString:call.method]) {
     NSURL *shortLink = [NSURL URLWithString:call.arguments[@"url"]];
